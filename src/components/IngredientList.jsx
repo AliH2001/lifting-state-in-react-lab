@@ -4,9 +4,10 @@ const IngredientList = (props) => {
             {props.availableIngredients.map((ingredient) => (
                 <li
                     style={{ backgroundColor: ingredient.color }}
-                    onClick={() => { props.handleAddToStack(ingredient) }}
+
                 >
                     {ingredient.name}
+                    <button onClick={() => { props.handleAddToStack(ingredient) }} >★</button>
                 </li>
             ))}
         </ul>

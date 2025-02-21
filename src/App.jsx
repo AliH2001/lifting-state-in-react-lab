@@ -26,7 +26,13 @@ const App = () => {
 
   const handleAddToStack = (ingredient) => {
     setStack([...stack, ingredient])
-    // console.log(stack)
+  }
+
+  const handleRemoveFromStack = (ingredient) => {
+    const newStackArr = stack.filter((stackIngredient) => (
+      stackIngredient.name !== ingredient.name
+    ))
+    setStack(newStackArr)
   }
 
   return (
@@ -38,7 +44,7 @@ const App = () => {
           handleAddToStack={handleAddToStack}
         />
         <hr />
-        <BurgerStack />
+        <BurgerStack stack={stack} handleRemoveFromStack={handleRemoveFromStack} />
       </section>
     </main>
   );
